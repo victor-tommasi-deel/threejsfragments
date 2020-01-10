@@ -25,7 +25,7 @@ class App extends React.Component {
     const fragments = createGeometry(dt);
     const shapes = fragments.map(({ shape }) => shape);
     const start = init(shapes, { z: 20 });
-    const viewer = document.getElementById('viewer');
+    const { viewer } = this.refs;
     viewer.appendChild(start.renderer.domElement);
     const { renderer, scene, camera } = start;
     this.setState({
